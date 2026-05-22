@@ -9,4 +9,4 @@ directory = "frontend/dist"
 [[d1_databases]]
 binding = "DB"
 database_name = "lifemanager-db"
-database_id = "local-db-placeholder"
+database_id = "0347cc58-458b-4d2e-9736-142d3e9170cf"
