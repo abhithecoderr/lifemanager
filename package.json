@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Life Manager - Hierarchical Task Management",
   "main": "src/index.js",
+  "workspaces": [
+    "frontend"
+  ],
   "scripts": {
     "dev": "wrangler dev --port 3006",
     "build": "npm run build --prefix frontend",
