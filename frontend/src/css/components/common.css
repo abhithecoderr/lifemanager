@@ -1,0 +1,248 @@
+/* ============================================
+   COMMON UI ELEMENTS
+   ============================================ */
+
+.date-selector-widget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 12px auto 32px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    padding: 8px 16px;
+    border-radius: 40px;
+    width: fit-content;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.date-selector-widget h1 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    min-width: 200px;
+    text-align: center;
+    letter-spacing: -0.2px;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.today-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--success);
+    background: var(--success-dim);
+    padding: 3px 8px;
+    border-radius: 10px;
+    margin-left: 8px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Current Time Display */
+.current-time-display {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.date-selector-widget .nav-arrow {
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    font-size: 0.75rem;
+}
+
+.date-selector-widget .nav-arrow:hover {
+    background: var(--bg-hover);
+}
+
+.section {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.section h2 {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.section-header h2 {
+    margin-bottom: 0;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+}
+
+.empty-state-icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    opacity: 0.5;
+}
+
+.empty-state-text {
+    font-size: 0.95rem;
+}
+
+/* Done tasks list */
+.done-tasks-list {
+    margin-bottom: 16px;
+}
+
+.done-task-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: var(--success-dim);
+    border-radius: var(--radius-sm);
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+.done-task-item .checkmark {
+    color: var(--success);
+    font-weight: bold;
+}
+
+.done-task-item .done-text {
+    color: var(--text-secondary);
+}
+
+/* History Panel Styles */
+.history-list {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.history-date-group {
+    margin-bottom: 24px;
+}
+
+.history-date-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: 12px;
+}
+
+.history-date {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+.history-count {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: var(--bg-elevated);
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.history-entries {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.history-entry {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: var(--bg-elevated);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-light);
+}
+
+.history-time {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    min-width: 60px;
+    font-family: monospace;
+}
+
+.history-checkmark {
+    color: var(--success);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.history-text {
+    flex: 1;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+.history-path {
+    color: var(--text-muted);
+    font-size: 0.85em;
+}
+
+.history-level {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    background: var(--bg-surface);
+    padding: 3px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border-light);
+}
+
+/* History Notes (What Got Done & Reflection) */
+.history-notes {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.history-note-section {
+    background: var(--bg-elevated);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    border: 1px solid var(--border-color);
+}
+
+.history-note-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.history-note-content {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    white-space: pre-wrap;
+}

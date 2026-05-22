@@ -1,0 +1,106 @@
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.nav-arrow {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    color: var(--text-primary);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-arrow:hover {
+    background: var(--bg-hover);
+    border-color: #ffffff;
+    transform: scale(1.1);
+}
+
+.btn-add {
+    background: var(--bg-surface);
+    border: 1px solid var(--accent);
+    color: var(--text-primary);
+    padding: 8px 18px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all var(--transition-fast);
+}
+
+.btn-add .icon {
+    color: var(--accent);
+}
+
+.btn-add:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+.btn-add:hover .icon {
+    color: white;
+}
+
+.btn-confirm {
+    background: var(--accent);
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: 0 10px 20px var(--accent-dim);
+}
+
+.btn-confirm:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px var(--accent-dim);
+}
+
+.add-subtask-btn {
+    background: transparent;
+    border: 1px dashed var(--border-light);
+    color: var(--text-muted);
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 0.85rem;
+    width: calc(100% - 16px);
+    margin-top: 8px;
+    margin-left: 16px;
+    transition: all var(--transition-fast);
+}
+
+.add-subtask-btn:hover {
+    border-color: #ffffff;
+    color: #ffffff;
+    background: var(--bg-surface);
+}
+
+.action-delete {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px;
+    opacity: 0;
+    transition: all var(--transition-fast);
+}
+
+.action-delete:hover {
+    color: var(--danger);
+}

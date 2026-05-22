@@ -1,0 +1,348 @@
+/* ============================================
+   MODALS
+   ============================================ */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    width: 90%;
+    max-width: 480px; /* Slightly wider */
+    transform: scale(0.95);
+    transition: transform var(--transition-normal);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    color-scheme: dark; /* Fixes native pickers */
+}
+
+.modal-overlay.active .modal {
+    transform: scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.modal-close {
+    background: var(--bg-elevated);
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1rem;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all var(--transition-fast);
+}
+
+.modal-close:hover {
+    color: var(--text-primary);
+    background: var(--bg-hover);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 24px;
+}
+
+.task-input {
+    width: 100%;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 16px 18px;
+    padding: 16px 20px;
+    border-radius: var(--radius-md);
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+    transition: all var(--transition-fast);
+}
+
+.task-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: var(--bg-hover);
+    box-shadow: 0 0 20px var(--accent-dim);
+}
+
+.task-input::placeholder {
+    color: var(--text-muted);
+}
+
+.modal-row {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.modal-row-inner {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 16px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+}
+
+.input-group select,
+.input-group input {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    transition: all var(--transition-fast);
+    width: 100%;
+}
+
+.input-group select:hover,
+.input-group input:hover {
+    border-color: var(--border-light);
+    background: var(--bg-hover);
+}
+
+.input-group select:focus,
+.input-group input:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: var(--bg-hover);
+    box-shadow: 0 0 15px var(--accent-dim);
+}
+
+/* Specific styling for the native duration input to fix consistency */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    opacity: 0.5;
+}
+
+.parent-selector {
+    display: none;
+    margin-top: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.parent-selector.show {
+    display: block;
+}
+
+.parent-selector label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.parent-selector select {
+    width: 100%;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 10px;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.parent-selector select:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 16px 20px;
+    border-top: 1px solid var(--border-color);
+}
+/* Suggestion Selector in Modal */
+.suggestion-selector {
+    display: none;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.suggestion-selector.show {
+    display: block;
+}
+
+.suggestion-selector label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+}
+
+.suggestion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+/* Custom Scrollbar for suggestion list */
+.suggestion-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.suggestion-list::-webkit-scrollbar-track {
+    background: var(--bg-surface);
+}
+
+.suggestion-list::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 2px;
+}
+
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.suggestion-item:hover {
+    border-color: var(--accent-dim);
+    background: var(--bg-hover);
+    transform: translateX(4px);
+}
+
+.suggestion-item-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.suggestion-item-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.suggestion-item-parent {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.suggestion-item-plus {
+    color: var(--accent);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: 12px;
+    opacity: 0.6;
+    transition: opacity var(--transition-fast);
+}
+
+.suggestion-item:hover .suggestion-item-plus {
+    opacity: 1;
+}
+
+/* Custom Time Picker */
+.time-picker-custom {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.time-picker-custom select {
+    flex: 1;
+    min-width: 50px;
+    padding: 12px 8px;
+    text-align: center;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.time-picker-custom select:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: var(--bg-hover);
+}
+
+/* Clear Time Button */
+.btn-clear-time {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+    align-self: flex-end;
+}
+
+.btn-clear-time:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+    background: rgba(255, 80, 80, 0.1);
+}

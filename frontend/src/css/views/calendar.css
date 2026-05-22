@@ -1,0 +1,308 @@
+/* ============================================
+   CALENDAR STYLES (MONTH & YEAR)
+   ============================================ */
+
+/* Month Calendar - Prominent at Top */
+.month-panel-content {
+    max-width: 1400px;
+    padding: 32px 48px;
+}
+
+.month-calendar-section {
+    max-width: 600px;
+    margin: 16px auto 32px;
+    padding: 24px;
+    background: var(--bg-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+}
+
+/* Month Goals 3-Column Grid */
+.month-goals-section {
+    max-width: 100%;
+}
+
+.month-goals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.month-goals-grid .goal-card {
+    margin-bottom: 0;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.calendar-weekdays span {
+    text-align: center;
+    font-size: 0.6rem; /* Smaller */
+    color: var(--text-muted);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px; /* Tighter */
+}
+
+.calendar-day {
+    width: 30px; /* Smaller */
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+    position: relative;
+    margin: 0 auto;
+}
+
+.calendar-day:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+    transform: scale(1.1);
+}
+
+.calendar-day.today {
+    background: var(--accent);
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 4px 10px var(--accent-dim);
+}
+
+.calendar-day.other-month {
+    color: var(--text-faded);
+}
+
+.calendar-day.past {
+    opacity: 0.6;
+}
+
+.calendar-day.has-tasks::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+.calendar-day.today.has-tasks::after {
+    background: white;
+}
+
+/* Year Panel Layout - Full Width */
+.year-panel-content {
+    max-width: 100%;
+    width: 100%;
+    padding: 32px 48px;
+}
+
+.year-layout {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.year-calendars-column {
+    width: 40%;
+    flex-shrink: 0;
+}
+
+.year-goals-column {
+    width: 60%;
+    flex-shrink: 0;
+}
+
+.year-goals-section {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 16px;
+}
+
+.year-goals-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.year-goals-grid .goal-card {
+    margin-bottom: 0;
+    background: var(--bg-surface);
+}
+
+/* Year Mini Calendars - 3 per row, compact */
+.year-mini-calendars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.mini-calendar {
+    background: var(--bg-surface);
+    padding: 12px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-fast);
+}
+
+
+.mini-calendar:hover {
+    border-color: var(--border-light);
+    transform: translateY(-2px);
+    background: var(--bg-elevated);
+}
+
+.mini-calendar.current-month {
+    border: 1px solid var(--accent);
+    box-shadow: 0 0 20px var(--accent-dim);
+}
+
+.mini-calendar-header {
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.65rem;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mini-calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.mini-day {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    color: var(--text-secondary);
+    margin: 0 auto;
+}
+
+.mini-day:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+    transform: scale(1.1);
+}
+
+.mini-day.today {
+    background: var(--accent);
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 2px 8px var(--accent-dim);
+}
+
+.mini-day.has-tasks {
+    color: var(--accent);
+    font-weight: 700;
+    position: relative;
+}
+
+.mini-day.has-tasks::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+.mini-day.today.has-tasks::after {
+    background: white;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .year-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .year-goals-section {
+        position: static;
+    }
+
+    .year-mini-calendars {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .year-goals-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1000px) {
+    .year-mini-calendars {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .month-goals-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .year-goals-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .month-goals-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .year-mini-calendars {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .year-goals-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .month-calendar-section {
+        margin: 12px 0 24px;
+        padding: 16px;
+    }
+
+    .month-panel-content,
+    .year-panel-content {
+        padding: 24px 16px;
+    }
+}
+
+@media (max-width: 500px) {
+    .year-mini-calendars {
+        grid-template-columns: 1fr;
+    }
+}

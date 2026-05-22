@@ -1,0 +1,12 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "lifemanager"
+main = "src/index.js"
+compatibility_date = "2026-05-22"
+
+[assets]
+directory = "frontend/dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "lifemanager-db"
+database_id = "local-db-placeholder"

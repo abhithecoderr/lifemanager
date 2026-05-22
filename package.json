@@ -1,0 +1,15 @@
+{
+  "name": "lifemanager",
+  "version": "1.0.0",
+  "description": "Life Manager - Hierarchical Task Management",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev --port 3006",
+    "build": "npm run build --prefix frontend",
+    "db:init": "wrangler d1 execute lifemanager-db --file=schema.sql --local"
+  },
+  "dependencies": {
+    "hono": "^4.12.22",
+    "yt-dlp-exec": "^1.0.2"
+  }
+}

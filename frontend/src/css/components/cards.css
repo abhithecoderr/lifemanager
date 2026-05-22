@@ -1,0 +1,263 @@
+/* ============================================
+   CARDS (GOAL & YEAR) - COMPACT
+   ============================================ */
+
+.goal-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    transition: all var(--transition-fast);
+}
+
+.goal-card:hover {
+    border-color: var(--border-light);
+    background: var(--bg-elevated);
+}
+
+.goal-card:hover .goal-action-btn {
+    opacity: 1;
+}
+
+.goal-card.done {
+    opacity: 0.5;
+}
+
+.goal-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.goal-checkbox {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    border: 1.5px solid var(--border-light);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Larger invisible click target */
+.goal-checkbox::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 50%;
+}
+
+.goal-checkbox:hover {
+    border-color: var(--accent);
+    transform: scale(1.1);
+}
+
+.goal-checkbox.checked {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.goal-checkbox.checked::after {
+    content: '✓';
+    color: white;
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.goal-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.goal-text {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0;
+    word-break: break-word;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.goal-card.done .goal-text {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.goal-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.goal-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-bar {
+    width: 100px;
+    height: 4px;
+    background: var(--bg-elevated);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width var(--transition-normal);
+}
+
+.progress-text {
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.goal-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.goal-action-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+    transition: all var(--transition-fast);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.goal-action-btn svg {
+    display: block;
+}
+
+.goal-card:hover .goal-action-btn {
+    opacity: 1;
+}
+
+.goal-action-btn:hover {
+    color: var(--text-primary);
+    background: var(--bg-hover);
+}
+
+.goal-action-btn.edit:hover {
+    color: var(--accent);
+}
+
+.goal-action-btn.delete:hover {
+    color: var(--danger);
+}
+
+/* Subtasks */
+.goal-children {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+.goal-children .goal-card {
+    background: var(--bg-primary);
+    margin-left: 24px;
+    border: 1px solid var(--border-color);
+    border-left: 2px solid var(--border-light);
+    padding: 16px;
+}
+
+.goal-children .goal-card:last-child {
+    margin-bottom: 0;
+}
+
+/* Nested depth styling */
+.goal-children .goal-children {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.goal-children .goal-children .goal-card {
+    padding: 12px 14px;
+    margin-left: 16px;
+    border-left-color: var(--border-light);
+}
+
+.goal-children .goal-children .goal-text {
+    font-size: 0.95rem;
+}
+
+/* Nested progress indicator */
+.nested-progress {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+/* Nested card styling */
+.goal-card.nested .goal-text {
+    margin-bottom: 4px;
+}
+
+.goal-card.nested .goal-meta {
+    gap: 12px;
+    font-size: 0.75rem;
+}
+
+/* Life Year Card */
+.life-year-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.life-year-card:hover {
+    border-color: var(--accent);
+    background: var(--bg-hover);
+}
+
+.life-year-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.life-year-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.life-year-stats {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.life-year-stats span {
+    color: var(--accent);
+    font-weight: 600;
+}
